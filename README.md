@@ -1,6 +1,6 @@
 ## Common Module: Logger
 
-Lightweight key-value structured logger for Qt/C++ components. Produces single-line log entries with a timestamp, level and alternating `key=value` pairs.
+Lightweight key-value structured logger. Produces single-line log entries with a timestamp, level and alternating `key=value` pairs.
 
 ### Quick start
 
