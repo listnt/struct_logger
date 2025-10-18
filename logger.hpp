@@ -68,7 +68,12 @@ public:
       std::lock_guard<std::mutex> guard(*lock);
 
       (*this->tmp) << "\b}";
-      (*out) << (*this->tmp).str() << std::endl;
+
+      if (arg_count == 1) { // only one arg
+        (*out) << "msg=" << (*this->tmp).str() << std::endl;
+      } else {
+        (*out) << (*this->tmp).str() << std::endl;
+      }
       *isFlushed = true;
     }
 
