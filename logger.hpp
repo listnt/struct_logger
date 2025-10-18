@@ -70,11 +70,7 @@ public:
 
       (*this->tmp) << "\b}";
 
-      if (arg_count == 1) { // only one arg
-        (*out) << "msg=" << (*this->tmp).str() << std::endl;
-      } else {
-        (*out) << (*this->tmp).str() << std::endl;
-      }
+      (*out) << (*this->tmp).str() << std::endl;
       *isFlushed = true;
     }
 
