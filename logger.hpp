@@ -78,7 +78,11 @@ public:
     }
   };
 
-  void setLvl(LEVEL lvl) { this->lvl = lvl; };
+  logger setLvl(LEVEL lvl) {
+    this->lvl = lvl;
+    return *this;
+  };
+
   void setOstream(std::ostream *out) { this->out = out; };
 
   template <typename T> logger operator<<(T arg) {
@@ -114,6 +118,12 @@ public:
     return res;
   }
 };
+
+// defailt loggers
+logger info = logger().setLvl(INFO);
+logger debug = logger().setLvl(DEBUG);
+logger warn = logger().setLvl(WARN);
+logger err = logger().setLvl(ERR);
 
 } // namespace zap
 
