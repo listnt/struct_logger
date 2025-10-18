@@ -84,7 +84,6 @@ public:
   template <typename T> logger operator<<(T arg) {
     auto res = *this;
     res.arg_count++;
-    res.isRoot = false;
 
     if (res.arg_count == 1) {
       res.isFlushed = new bool(false);
