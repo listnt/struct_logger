@@ -1,8 +1,9 @@
-#ifndef LOGGER_H
-#define LOGGER_H
+#ifndef LOGGER_HPP
+#define LOGGER_HPP
 
 #include <chrono>
 #include <iostream>
+#include <memory>
 #include <mutex>
 #include <unordered_map>
 
@@ -14,7 +15,7 @@ enum LEVEL {
   ERR,
 };
 
-std::string toLevel(LEVEL lvl) {
+inline std::string toLevel(LEVEL lvl) {
   switch (lvl) {
   case LEVEL::DEBUG:
     return "DEBUG";
@@ -125,11 +126,11 @@ public:
 };
 
 // defailt loggers
-logger info = logger().setLvl(INFO);
-logger debug = logger().setLvl(DEBUG);
-logger warn = logger().setLvl(WARN);
-logger err = logger().setLvl(ERR);
+inline logger info = logger().setLvl(INFO);
+inline logger debug = logger().setLvl(DEBUG);
+inline logger warn = logger().setLvl(WARN);
+inline logger err = logger().setLvl(ERR);
 
 } // namespace zap
 
-#endif // LOGGER_H
+#endif // LOGGER_HPP
