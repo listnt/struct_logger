@@ -55,7 +55,6 @@ public:
 class logger {
 private:
   LEVEL lvl = INFO;
-  bool isRoot = true;
   bool *isFlushed = nullptr;
   long arg_count = 0;
   std::ostream *out;
