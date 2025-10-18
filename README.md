@@ -20,18 +20,19 @@ A high-performance, thread-safe structured logging library for C++ that provides
 
 int main() {
     zap::logger log;
-    
-    // Basic structured logging
-    log << "message" << "Hello World" 
-        << "user_id" << 12345 
-        << "status" << "success";
-    
+
     // Set log level
     log.setLvl(zap::LEVEL::DEBUG);
     
     // Log to file
     std::ofstream file("app.log");
     log.setOstream(&file);
+    
+    
+    // Basic structured logging
+    log << "message" << "Hello World" 
+        << "user_id" << 12345 
+        << "status" << "success";
     
     return 0;
 }
