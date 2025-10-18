@@ -9,10 +9,17 @@ int main() {
   zap::logger log;
 
   try {
-    log << "msg" << throw_exception();
-    return 0;
+    log << "msg" << throw_exception() << "pid" << 12 << "version"
+        << "1.0.0";
   } catch (...) {
-    std::cout << "exception ocurred" << std::endl;
-    return 0;
+    std::cout << "first exception ocurred" << std::endl;
   }
+
+  try {
+    log << throw_exception();
+  } catch (...) {
+    std::cout << "second exception ocurred" << std::endl;
+  }
+
+  return 0;
 }

@@ -1,11 +1,11 @@
 #include "../logger.hpp"
 
-int throw_exception() {
-  throw 1;
-  return 1;
+char *make_leak() {
+  char *leak = new char[100];
+  return leak;
 }
 
 int main() {
-  char *leak = new char[100];
-  throw 1;
+  auto leak = make_leak();
+  return 0;
 }
